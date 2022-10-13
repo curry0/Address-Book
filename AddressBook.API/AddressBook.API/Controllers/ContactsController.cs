@@ -1,4 +1,4 @@
-﻿using AddressBook.API.Data;
+using AddressBook.API.Data;
 using AddressBook.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -69,10 +69,8 @@ namespace AddressBook.API.Controllers
         public async Task<IActionResult> UpdateContact([FromRoute] Guid id, Contact updateContactRequest)
         {
             var contact = await _addressBookDbContext.Contacts.FindAsync(id);
-            var contact1 = await _addressBookDbContext.Contacts.FirstOrDefaultAsync(x => x.Phone == updateContactRequest.Phone);
-
-
-            if (contact1 == null && contact != null) {
+     
+            if (contact != null) {
                 contact.FirstName = updateContactRequest.FirstName;
                 contact.LastName = updateContactRequest.LastName;
                 contact.Address = updateContactRequest.Address;

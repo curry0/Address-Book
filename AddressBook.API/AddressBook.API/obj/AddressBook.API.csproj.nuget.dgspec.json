@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Angular projects\\Address Book\\AddressBook API\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj": {}
+    "D:\\Angular projects\\Address Book fullstack\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj": {}
   },
   "projects": {
-    "D:\\Angular projects\\Address Book\\AddressBook API\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj": {
+    "D:\\Angular projects\\Address Book fullstack\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Angular projects\\Address Book\\AddressBook API\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj",
+        "projectUniqueName": "D:\\Angular projects\\Address Book fullstack\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj",
         "projectName": "AddressBook.API",
-        "projectPath": "D:\\Angular projects\\Address Book\\AddressBook API\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj",
+        "projectPath": "D:\\Angular projects\\Address Book fullstack\\AddressBook.API\\AddressBook.API\\AddressBook.API.csproj",
         "packagesPath": "C:\\Users\\Robert Kocev\\.nuget\\packages\\",
-        "outputPath": "D:\\Angular projects\\Address Book\\AddressBook API\\AddressBook.API\\AddressBook.API\\obj\\",
+        "outputPath": "D:\\Angular projects\\Address Book fullstack\\AddressBook.API\\AddressBook.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
