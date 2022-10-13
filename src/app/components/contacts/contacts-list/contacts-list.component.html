@@ -1,0 +1,65 @@
+<div class="container my-5">
+
+    <h1 class="mb-3">Contacts</h1>
+    <nav class="navbar">
+        <input class="form-control" type="text" name="firstName" [(ngModel)] = "firstName" (ngModelChange) = "search()"
+        placeholder="Enter First Name to search">
+    </nav>
+
+    <table class="table" *ngIf="contacts && contacts.length > 0">
+        <thead>
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let contact of contacts | paginate: {itemsPerPage:5, currentPage:p};">
+                <!-- <td>{{contact.id}}</td> -->
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+                <td>{{contact.address}}</td>
+                <td>{{contact.phone}}</td>
+                <td><a [routerLink] = "['/contacts', 'edit', contact.id]">View</a></td>
+                <td>
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                          </svg>
+                    </button>
+                    
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Contact removal </h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Are you sure you want to permanently delete the contact?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                  <button type="button" class="btn btn-primary"(click)="deleteContact(contact.id)" data-bs-dismiss="modal">Yes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                </td>
+            </tr>
+
+        </tbody>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </table>
+
+    
+    <p *ngIf = "!contacts || contacts.length <= 0">No Contacts found</p>
+</div>
+
+
